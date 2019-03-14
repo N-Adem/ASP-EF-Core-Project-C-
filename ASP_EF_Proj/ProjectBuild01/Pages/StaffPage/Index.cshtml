@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id:int?}"
 @model ProjectBuild01.Pages.StaffPage.IndexModel
 
 @{
@@ -9,6 +9,7 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<h3> Staff Table</h3>
 <table class="table">
     <thead>
         <tr>
@@ -45,9 +46,37 @@
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a> |
+                <a asp-page="./TotalPay" asp-route-id="@item.ID">Get Total</a> 
             </td>
         </tr>
 }
     </tbody>
+</table>
+<h3> Pay Table </h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Model => Model.paye[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.paye[0].week1Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.paye[0].week2Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.paye[0].week3Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.paye[0].week4Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.paye[0].monthlyTotal)
+            </th>
+
+        </tr>
+    </thead>
+  
 </table>

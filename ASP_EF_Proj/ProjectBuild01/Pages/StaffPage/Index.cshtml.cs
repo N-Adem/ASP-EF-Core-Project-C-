@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ProjectBuild01.Model;
-using ProjectBuild01.Models;
 
 namespace ProjectBuild01.Pages.StaffPage
 {
@@ -19,11 +18,12 @@ namespace ProjectBuild01.Pages.StaffPage
             _context = context;
         }
 
-        public IList<StaffDb> StaffDb { get;set; }
-
+        public IList<StaffDb> StaffDb { get; set; }
+        public IList<PaySheetDb> paye { get; set; }
+     
         public async Task OnGetAsync()
         {
-            StaffDb = await _context.StaffDb.ToListAsync();
+            StaffDb = await _context.StaffDb.ToListAsync(); 
         }
     }
 }

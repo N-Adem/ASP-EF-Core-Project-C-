@@ -11,19 +11,19 @@ namespace ProjectBuild01.Pages.StaffPage
 {
     public class IndexModel : PageModel
     {
+        public IList<StaffDb> StaffDb { get; set; }
+        public IList<PaySheetDb> PayDb { get; set; }
         private readonly ProjectBuild01.Models.ProjectBuild01Context _context;
-
+        IndexModel() { }
         public IndexModel(ProjectBuild01.Models.ProjectBuild01Context context)
         {
             _context = context;
         }
 
-        public IList<StaffDb> StaffDb { get; set; }
-        public IList<PaySheetDb> paye { get; set; }
-     
         public async Task OnGetAsync()
         {
-            StaffDb = await _context.StaffDb.ToListAsync(); 
+            StaffDb = await _context.StaffDb.ToListAsync();
+            PayDb = await _context.PaySheetDb.ToListAsync();
         }
     }
 }

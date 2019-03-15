@@ -1,6 +1,5 @@
 ﻿@page "{id:int?}"
 @model ProjectBuild01.Pages.StaffPage.IndexModel
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -57,26 +56,23 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(Model => Model.paye[0].ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.paye[0].week1Hours)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.paye[0].week2Hours)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.paye[0].week3Hours)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.paye[0].week4Hours)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.paye[0].monthlyTotal)
-            </th>
-
+      <th> @Html.DisplayNameFor(model => model.PayDb[0].ID)</th>
+      <th> @Html.DisplayNameFor(model => model.PayDb[0].HourlyPay)</th>
+      <th> @Html.DisplayNameFor(model => model.PayDb[0].Week1Hours)</th>
+      <th> @Html.DisplayNameFor(model => model.PayDb[0].Week2Hours)</th>
+      <th> @Html.DisplayNameFor(model => model.PayDb[0].Week3Hours)</th>
+      <th> @Html.DisplayNameFor(model => model.PayDb[0].Week4Hours)</th>
+      <th> @Html.DisplayNameFor(model => model.PayDb[0].TotalHours)</th>
         </tr>
     </thead>
+    <tbody>
+        @foreach (var item in Model.PayDb)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.HourlyPay)</td>
+            </tr>
+        }
+
+    </tbody>
   
 </table>

@@ -34,6 +34,27 @@ namespace ProjectBuild01.Migrations
 
                     b.ToTable("StaffDb");
                 });
+            modelBuilder.Entity("ProjectBuild01.Model.PaySheetDb", b =>
+            {
+                b.Property<int>("ID")
+                    .ValueGeneratedOnAdd()
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                b.Property<int>("HourlyPay");
+
+                b.Property<int>("Week1Hours");
+
+                b.Property<int>("Week2Hours");
+
+                b.Property<int>("Week3Hours");
+
+                b.Property<int>("Week4Hours");
+
+                b.Property<int>("TotalHours");
+
+                b.HasKey("ID");
+
+                b.ToTable("PaySheetDb");
+            });
 #pragma warning restore 612, 618
         }
     }

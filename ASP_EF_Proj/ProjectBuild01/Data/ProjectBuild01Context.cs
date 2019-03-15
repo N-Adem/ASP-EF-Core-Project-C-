@@ -12,9 +12,9 @@ namespace ProjectBuild01.Models
         public ProjectBuild01Context (DbContextOptions<ProjectBuild01Context> options)
             : base(options)
         {
-
         }
 
         public DbSet<ProjectBuild01.Model.StaffDb> StaffDb { get; set; }
+        public DbSet<ProjectBuild01.Model.PaySheetDb> PaySheetDb { get; set; }
     }
 }
